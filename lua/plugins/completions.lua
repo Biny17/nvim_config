@@ -34,11 +34,11 @@ return {
         }),
         sources = cmp.config.sources({
           { name = "copilot" },
-          { name = "nvim_lsp" }, -- prioritize LSP
-          { name = "luasnip" },  -- then snippets
+          { name = "nvim_lsp" },
+          { name = "luasnip" },
         }, {
-          { name = "buffer" },   -- then text in current file
-          { name = "path" },     -- then file paths
+          { name = "buffer" },
+          { name = "path" },
         }),
       })
     end,
