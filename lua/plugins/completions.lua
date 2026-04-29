@@ -1,17 +1,17 @@
 return {
-  {
-    "zbirenbaum/copilot-cmp",
-    event = { "InsertEnter", "LspAttach" },
-    dependencies = { "zbirenbaum/copilot.lua" },
-    config = function()
-      require("copilot_cmp").setup()
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   event = { "InsertEnter", "LspAttach" },
+  --   dependencies = { "zbirenbaum/copilot.lua" },
+  --   config = function()
+  --     require("copilot_cmp").setup()
+  --   end,
+  -- },
   {
     "hrsh7th/nvim-cmp",
     event = "InsertEnter",
     dependencies = {
-      "zbirenbaum/copilot-cmp",
+      -- "zbirenbaum/copilot-cmp",
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-buffer",
@@ -37,7 +37,6 @@ return {
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
         }),
         sources = cmp.config.sources({
-          -- { name = "copilot", group_index = 2},
           { name = "nvim_lsp", group_index = 2 },
           { name = "luasnip", group_index = 2 },
         }, {
@@ -49,7 +48,6 @@ return {
             mode = "symbol_text",
             maxwidth = 50,
             ellipsis_char = "...",
-            symbol_map = { Copilot = " "},
           }),
         },
       })
