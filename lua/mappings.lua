@@ -6,6 +6,7 @@ local map = vim.keymap.set
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
+map("i", "<C-d>", "<ESC>viw", { desc = "Visual select current word" })
 
 -- Use <Esc> to exit terminal mode
 map('t', '<Esc>', '<C-\\><C-n>')
