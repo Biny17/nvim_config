@@ -13,5 +13,4 @@ map('t', '<Esc>', '<C-\\><C-n>')
 
 -- Standard Telescope LSP references
 vim.keymap.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = 'LSP References' })
-
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
