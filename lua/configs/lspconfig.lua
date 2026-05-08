@@ -8,4 +8,11 @@ vim.lsp.config("*", {
 
 vim.lsp.enable(servers)
 
+vim.diagnostic.config({
+  float = {
+    wrap = true,      -- Enable line wrapping in the float
+    max_width = 80,   -- Optional: cap the float width
+  },
+})
+
 -- read :h vim.lsp.config for changing options of lsp servers 
