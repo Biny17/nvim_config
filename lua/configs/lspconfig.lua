@@ -9,7 +9,9 @@ vim.lsp.config("*", {
 vim.lsp.enable(servers)
 
 vim.diagnostic.config({
-  float = {
+  virtual_text = {
+    suffix = " (...)", -- shown when the message is truncated
+  },float = {
     wrap = true,      -- Enable line wrapping in the float
     max_width = 80,   -- Optional: cap the float width
   },
