@@ -7,9 +7,5 @@ return {
       enable_rename = true,         -- rename closing tag when opening tag is edited
       enable_close_on_slash = true, -- close on </
     },
-    aliases = {
-      ["typescript.tsx"] = "tsx",
-      ["javascript.jsx"] = "jsx",
-    },
   },
 }
