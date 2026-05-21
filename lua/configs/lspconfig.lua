@@ -8,14 +8,14 @@ vim.lsp.config("*", {
 
 vim.lsp.enable(servers)
 
-vim.diagnostic.config({
-  virtual_text = {
-    suffix = " (...)", -- shown when the message is truncated
-  },float = {
-    wrap = true,      -- Enable line wrapping in the float
-    max_width = 80,   -- Optional: cap the float width
+vim.diagnostic.config {
+  virtual_text = false,
+  virtual_lines = { current_line = true },
+  float = {
+    wrap = true,
+    max_width = 80,
   },
-})
+}
 
 -- read :h vim.lsp.config for changing options of lsp servers
 vim.lsp.config("cssls", {
@@ -27,8 +27,11 @@ vim.lsp.config("cssls", {
 
 vim.lsp.config("tailwindcss", {
   filetypes = {
-    "html", "css",
-    "javascript", "typescript",
-    "javascriptreact", "typescriptreact",
+    "html",
+    "css",
+    "javascript",
+    "typescript",
+    "javascriptreact",
+    "typescriptreact",
   },
 })

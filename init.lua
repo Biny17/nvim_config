@@ -36,11 +36,10 @@ vim.schedule(function()
   require "mappings"
 end)
 
-
 -- Set <space> as the leader key
 -- See `:help mapleader`
 -- NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- [[ Setting options ]] See `:h vim.o`
 -- NOTE: You can change these options as you wish!
@@ -58,9 +57,9 @@ vim.o.relativenumber = true
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
-vim.api.nvim_create_autocmd('UIEnter', {
+vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
-    vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = "unnamedplus"
   end,
 })
 
@@ -98,8 +97,8 @@ vim.o.confirm = true
 
 -- Highlight when yanking (copying) text.
 -- Try it with `yap` in normal mode. See `:h vim.hl.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
   callback = function()
     vim.hl.on_yank()
   end,
@@ -110,9 +109,9 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Create a command `:GitBlameLine` that print the git blame for the current line
 --vim.api.nvim_create_user_command('GitBlameLine', function()
-  --local line_number = vim.fn.line('.') -- Get the current line number. See `:h line()`
+--local line_number = vim.fn.line('.') -- Get the current line number. See `:h line()`
 --  local filename = vim.api.nvim_buf_get_name(0)
-  --print(vim.fn.system({ 'git', 'blame', '-L', line_number .. ',+1', filename }))
+--print(vim.fn.system({ 'git', 'blame', '-L', line_number .. ',+1', filename }))
 --end, { desc = 'Print the git blame for the current line' })
 
 -- [[ Add optional packages ]]
@@ -122,3 +121,20 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
 -- 'updatetime' and when going to insert mode
 --vim.cmd('packadd! nohlsearch')
+
+-- vim.api.nvim_create_autocmd("VimEnter", {
+--   callback = function()
+--     vim.fn.jobstart("kill -s WINCH $PPID", { detach = true })
+--   end,
+-- })
+
+-- init.lua
+-- Force-enable CSI u (Kitty keyboard protocol mode 1) at startup
+vim.api.nvim_create_autocmd("VimEnter", {
+  callback = function()
+    io.write "\x1b[>1u"
+  end,
+})
+
+vim.keymap.set("n", "<Tab>", "<Tab>", { noremap = true })
+vim.keymap.set("n", "<C-i>", "<C-i>", { noremap = true }) -- now distinct
