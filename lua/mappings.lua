@@ -16,3 +16,8 @@ map('n', 'gr', require('telescope.builtin').lsp_references, { desc = 'LSP Refere
 map('n', '<leader>fd', require('telescope.builtin').lsp_document_symbols, { desc = 'LSP Document Symbols'})
 map('n', '<leader>fs', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'LSP Workspace Symbols'})
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+
+-- Restore <C-i> jumplist forward (NvChad maps <Tab> to next buffer which
+-- intercepts <C-i> in terminals without kitty keyboard protocol support).
+-- With kitty protocol these are already distinct; this ensures it works either way.
+map("n", "<C-i>", "<C-i>", { noremap = true, desc = "Jump forward in jumplist" })

@@ -1,12 +1,9 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "ts_ls", "tailwindcss", "eslint", "clangd", "lua_ls", "gopls", "pylsp" }
 -- Broadcast cmp capabilities to ALL servers globally
 vim.lsp.config("*", {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
 })
-
-vim.lsp.enable(servers)
 
 vim.diagnostic.config({
   virtual_text = {

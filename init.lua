@@ -122,3 +122,5 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 -- For example, to add the "nohlsearch" package to automatically turn off search highlighting after
 -- 'updatetime' and when going to insert mode
 --vim.cmd('packadd! nohlsearch')
+
+vim.opt.termguicolors = true
