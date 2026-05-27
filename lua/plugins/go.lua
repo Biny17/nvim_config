@@ -6,7 +6,7 @@ return {
       "neovim/nvim-lspconfig",
     },
     config = function()
-      require("go").setup()
+      require("go").setup({ lsp_cfg = false }) -- gopls managed by mason-lspconfig
       local fmt_grp = vim.api.nvim_create_augroup("goimports", {})
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = "*.go",

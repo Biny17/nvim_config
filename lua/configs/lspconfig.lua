@@ -22,10 +22,19 @@ vim.lsp.config("cssls", {
   },
 })
 
+vim.lsp.config("html", {
+  filetypes = { "html", "templ" },
+})
+
 vim.lsp.config("tailwindcss", {
   filetypes = {
-    "html", "css",
+    "html", "css", "templ",
     "javascript", "typescript",
     "javascriptreact", "typescriptreact",
+  },
+  settings = {
+    tailwindCSS = {
+      includeLanguages = { templ = "html" },
+    },
   },
 })

@@ -1,13 +1,11 @@
 return {
   {
-    "williamboman/mason-lspconfig.nvim",
-    dependencies = { "mason.nvim", "nvim-lspconfig" },
-    config = function()
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          vim.lsp.enable(server_name)
-        end,
-      })
-    end,
-  },
+    "mason-org/mason-lspconfig.nvim",
+    lazy = false,
+    opts = {},
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  }
 }

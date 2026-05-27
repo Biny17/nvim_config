@@ -13,16 +13,16 @@ return {
     end,
   },
 
-  -- test new blink
-  --{ import = "nvchad.blink.lazyspec" },
-
   {
-  	"nvim-treesitter/nvim-treesitter",
-  	opts = {
-  		ensure_installed = {
-  			"vim", "lua", "vimdoc",
-       "html", "css", "javascript", "typescript", "tsx", "go"
-  		},
-  	},
+    "nvim-treesitter/nvim-treesitter",
+    dependencies = {
+      "vrischmann/tree-sitter-templ",
+    },
+    opts = {
+      ensure_installed = {
+        "vim", "lua", "vimdoc", "templ",
+        "html", "css", "javascript", "typescript", "tsx", "go"
+      },
+    },
   },
 }
