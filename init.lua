@@ -66,9 +66,6 @@ vim.o.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 7
 
--- Show <tab> and trailing spaces
-vim.o.list = true
-
 vim.o.confirm = true
 
 vim.api.nvim_create_autocmd('TextYankPost', {

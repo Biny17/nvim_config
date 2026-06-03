@@ -6,11 +6,13 @@ vim.lsp.config("*", {
 })
 
 vim.diagnostic.config({
-  virtual_text = {
-    suffix = " (...)", -- shown when the message is truncated
-  },float = {
-    wrap = true,      -- Enable line wrapping in the float
-    max_width = 80,   -- Optional: cap the float width
+  virtual_text = false,
+  virtual_lines = {
+    current_line = true,
+  },
+  float = {
+    wrap = true,
+    max_width = 80,
   },
 })
 
