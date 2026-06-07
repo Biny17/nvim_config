@@ -31,7 +31,7 @@ return {
     end,
 
     ui = {
-      enable = true,
+      enable = false,
     },
   },
 
