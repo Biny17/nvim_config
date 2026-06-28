@@ -36,9 +36,8 @@ vim.schedule(function()
   require "mappings"
 end)
 
-
 -- Set <space> as the leader key
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- Print the line number in front of each line
 vim.o.number = true
@@ -50,9 +49,9 @@ vim.o.relativenumber = true
 -- Sync clipboard between OS and Neovim. Schedule the setting after `UiEnter` because it can
 -- increase startup-time. Remove this option if you want your OS clipboard to remain independent.
 -- See `:help 'clipboard'`
-vim.api.nvim_create_autocmd('UIEnter', {
+vim.api.nvim_create_autocmd("UIEnter", {
   callback = function()
-    vim.o.clipboard = 'unnamedplus'
+    vim.o.clipboard = "unnamedplus"
   end,
 })
 
@@ -68,8 +67,8 @@ vim.o.scrolloff = 7
 
 vim.o.confirm = true
 
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
+vim.api.nvim_create_autocmd("TextYankPost", {
+  desc = "Highlight when yanking (copying) text",
   callback = function()
     vim.hl.on_yank()
   end,
@@ -77,4 +76,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 vim.opt.termguicolors = true
 
-vim.filetype.add({ extension = { templ = "templ" } })
+vim.filetype.add { extension = { templ = "templ" } }
+
+vim.o.exrc = true
