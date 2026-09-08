@@ -23,15 +23,15 @@ return {
     vim.notify = notify
 
     -- Show LSP progress messages (server start, indexing, etc.) via nvim-notify
-    vim.lsp.handlers["$/progress"] = function(_, result, ctx)
-      local value = result.value
-      if not value or not value.kind then
-        return
-      end
-      local msg = value.message or value.title or ""
-      if value.kind == "begin" then
-        vim.notify(("[LSP] %s"):format(msg), vim.log.levels.INFO, { title = "LSP" })
-      end
-    end
+    -- vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+    --   local value = result.value
+    --   if not value or not value.kind then
+    --     return
+    --   end
+    --   local msg = value.message or value.title or ""
+    --   if value.kind == "begin" then
+    --     vim.notify(("[LSP] %s"):format(msg), vim.log.levels.INFO, { title = "LSP" })
+    --   end
+    -- end
   end,
 }

@@ -5,5 +5,12 @@ return {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
   },
-  opts = {},
+  opts = {
+    pipe_table = {
+      preset = "none",
+      style = "full",
+      cell = "padded",
+      padding = 1,
+    },
+  },
 }

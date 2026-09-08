@@ -24,7 +24,7 @@ M.mason = {
 }
 
 M.base46 = {
-	theme = "flouromachine",
+	theme = "aylin",
 
 	-- hl_override = {
 	-- 	Comment = { italic = true },

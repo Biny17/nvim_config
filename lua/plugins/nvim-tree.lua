@@ -3,7 +3,7 @@ return {
   opts = {
     filters = {
       dotfiles = false,
-      git_ignored = false,
+      git_ignored = true,
       custom = {},
       exclude = {},
     },
